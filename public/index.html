@@ -4,13 +4,24 @@
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Web site created using create-snowpack-app" />
+    <meta
+      name="description"
+      content="Web site created using create-snowpack-app"
+    />
     <link rel="stylesheet" type="text/css" href="/index.css" />
-    <title>Snowpack App</title>
+    <title>Typescript Random Colour App</title>
   </head>
   <body>
-    <img id="img" src="/logo.svg" />
-    <canvas id="canvas"></canvas>
+    <main>
+      <div class="container">
+        <h2 id="title">Random Colors : <span class="title-color">#f00000</span></h2>
+      </div>
+      <div class="container">
+        <h2>Background color: <span class="color"> #f1f5f8 </span></h2>
+        <button class="btn btn-hero" id="btn">Random Background Color</button>
+        <button class="btn btn-hero" id="btn-title">Random Title Color</button>
+      </div>
+    </main>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <script type="module" src="/dist/index.js"></script>
     <!--

@@ -1,11 +1,31 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+const hex = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"];
+const btn = document.getElementById("btn") as HTMLButtonElement
+const btnTitle = document.getElementById("btn-title") as HTMLButtonElement
+const color = document.querySelector<HTMLSpanElement>(".color")
+const title = document.getElementById("title") as HTMLElement
+const titleColor = document.querySelector<HTMLSpanElement>(".title-color")
 
-import confetti from 'canvas-confetti';
+btn.addEventListener("click", ()=> {
+  let hexColor = "#"
+  for (let i = 0; i < 6; i++){
+    hexColor += hex[getRandomNumber()]
+  }
+  color!.textContent = hexColor;
+  document.body.style.backgroundColor = hexColor;
+})
 
-confetti.create(document.getElementById('canvas') as HTMLCanvasElement, {
-  resize: true,
-  useWorker: true,
-})({ particleCount: 200, spread: 200 });
+btnTitle.addEventListener("click", () => {
+  let hexColor = "#"
+  for (let i = 0; i < 6; i++){
+    hexColor += hex[getRandomNumber()]
+  }
+  titleColor!.textContent = hexColor;
+  title.style.color = hexColor;
+})
+
+const getRandomNumber = (): number => {
+  return Math.floor(Math.random() * hex.length)
+}
+
+
+export {}
